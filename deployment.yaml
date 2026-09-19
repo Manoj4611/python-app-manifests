@@ -1,21 +1,21 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: devops-website
+  name: python-app
   namespace: devops-app
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: devops-website
+      app: python-app
   template:
     metadata:
       labels:
-        app: devops-website
+        app: python-app
     spec:
       containers:
-      - name: devops-website
-        image: YOUR_DOCKERHUB_USERNAME/devops-website:1.0
+      - name: python-app
+        image: 493223220386.dkr.ecr.ap-south-1.amazonaws.com/python-app:1.0
         ports:
         - containerPort: 5000
         env:
